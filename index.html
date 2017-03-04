@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Vue Volume Calc</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<!-- page content -->
+			<div id="app">
+				{{message}}
+
+				<div id="list">
+					<div class="form-inline">
+						<button class="btn" v-on:click="addRow">Add Row</button>
+						<div class="form-group">
+							<input class="form-control" disabled="disabled" value="432">
+						</div>
+					</div><!-- .form-inline -->
+					<ul class="list-group">
+						<li
+							class="list-group-item"
+							v-for="(row, index) in rows"
+							v-bind:row="row">
+							<div class="form-inline">
+								<div class="form-group">
+									<label>Length</label> <input class="length form-control" placeholder="length">
+								</div>
+								<div class="form-group">
+									<label>Width</label> <input class="width form-control" placeholder="width">
+								</div>
+								<div class="form-group">
+									<label>Height</label> <input class="height form-control" placeholder="height">
+								</div>
+								<div class="form-group">
+									<label>Volume</label> <input class="form-control" disabled="disabled" value="123">
+								</div>
+							</div><!-- .form-inline -->
+							<div class="form-group">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- .container -->
+
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="js/app.js?v=20161231"></script>
+	</body>
+</html>
