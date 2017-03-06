@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Vue Volume Calc</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	</head>
+	<body>
+
+		<div id="app">
+			<h2>Additive Volume Calculator</h2>
+			<label>Total Volume</label>
+			<input disabled="disabled" v-model="totalVolume" >
+			<button v-on:click="addRow">Add Row</button>
+
+			<ul>
+				<li v-for="(row, index) in rows" v-bind:row="row">
+					<label>Length</label>
+					<input placeholder="length" v-model="row.length" v-on:blur="calcVol(row)" v-on:keyup.enter="calcVol(row)">
+
+					<label>Width</label>
+					<input placeholder="width" v-model="row.width" v-on:blur="calcVol(row)" v-on:keyup.enter="calcVol(row)">
+
+					<label>Height</label>
+					<input placeholder="height" v-model="row.height" v-on:blur="calcVol(row)" v-on:keyup.enter="calcVol(row)">
+
+					<label>Volume</label> <input disabled="disabled" v-model="row.volume">
+					<button @click="removeRow(row)">Delete</button>
+				</li>
+			</ul>
+		</div><!-- #app -->
+
+		<script src="js/vue-2-2-1.js"></script>
+		<script src="js/app.js?v=20161231"></script>
+	</body>
+</html>
