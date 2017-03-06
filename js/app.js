@@ -7,7 +7,6 @@ function Row() {
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!',
 	rows: [],
 	totalVolume: 0
   },

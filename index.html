@@ -12,25 +12,32 @@
 
 		<div class="container">
 			<!-- page content -->
-			<div id="app">
-				{{message}}
+			<div id="app" class="panel-group">
+				<h2>Additive Volume Calculator</h2>
+				<p>
+					Each row calculates one "block" of volume (length x width x height).  The total volume is displayed at the top of the page.
+				</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="form-inline">
+							<div class="form-group">
+								<label>Total Volume</label>
+								<input
+									class="form-control"
+									disabled="disabled"
+									v-model="totalVolume"
+									>
+							</div>
+							<button class="btn" v-on:click="addRow">Add Row</button>
+						</div><!-- .form-inline -->
+					</div><!-- .panel-heading -->
 
-				<div id="list">
-					<div class="form-inline">
-						<button class="btn" v-on:click="addRow">Add Row</button>
-						<div class="form-group">
-							<input
-								class="form-control"
-								disabled="disabled"
-								v-model="totalVolume"
-								>
-						</div>
-					</div><!-- .form-inline -->
 					<ul class="list-group">
 						<li
 							class="list-group-item"
 							v-for="(row, index) in rows"
 							v-bind:row="row">
+
 							<div class="form-inline">
 								<div class="form-group">
 									<label>Length</label>
@@ -61,13 +68,11 @@
 								</div>
 								<button class="btn" @click="removeRow(row)">Delete</button>
 							</div><!-- .form-inline -->
-							<div class="form-group">
-							</div>
 						</li>
 					</ul>
-				</div>
-			</div>
-		</div><!-- .container -->
+				</div><!-- .panel panel-default -->
+			</div><!-- .panel panel-default -->
+		</div><!-- #app .panel-group -->
 
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 		<script src="js/app.js?v=20161231"></script>
