@@ -16,7 +16,7 @@ var app = new Vue({
 		},
 		removeRow: function( row ) {
 			this.rows.splice(this.rows.indexOf(row), 1)
-				this.updateTotalVol();
+			this.updateTotalVol();
 		},
 		calcVol: function( row ) {
 			row.volume = row.length * row.width * row.height;
