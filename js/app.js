@@ -1,7 +1,8 @@
 function Row() {
-	this.length = '';
-	this.width  = '';
-	this.height = '';
+	this.length = 0;
+	this.width  = 0;
+	this.height = 0;
+	this.volume = 0;
 }
 var app = new Vue({
   el: '#app',
