@@ -8,7 +8,8 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue.js!',
-	rows: []
+	rows: [],
+	totalVolume: 0
   },
   methods: {
 	  addRow: function() {
