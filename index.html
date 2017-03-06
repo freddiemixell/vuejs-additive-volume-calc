@@ -19,7 +19,11 @@
 					<div class="form-inline">
 						<button class="btn" v-on:click="addRow">Add Row</button>
 						<div class="form-group">
-							<input class="form-control" disabled="disabled" value="432">
+							<input
+								class="form-control"
+								disabled="disabled"
+								v-model="totalVolume"
+								>
 						</div>
 					</div><!-- .form-inline -->
 					<ul class="list-group">
@@ -29,17 +33,33 @@
 							v-bind:row="row">
 							<div class="form-inline">
 								<div class="form-group">
-									<label>Length</label> <input class="length form-control" placeholder="length">
+									<label>Length</label>
+									<input class="length form-control"
+										placeholder="length"
+										v-model="row.length"
+										v-on:blur="calcVol(row)"
+										v-on:keyup.enter="calcVol(row)">
 								</div>
 								<div class="form-group">
-									<label>Width</label> <input class="width form-control" placeholder="width">
+									<label>Width</label> <input
+										class="width form-control"
+										placeholder="width"
+										v-model="row.width"
+										v-on:blur="calcVol(row)"
+										v-on:keyup.enter="calcVol(row)">
 								</div>
 								<div class="form-group">
-									<label>Height</label> <input class="height form-control" placeholder="height">
+									<label>Height</label>
+									<input class="height form-control"
+										placeholder="height"
+										v-model="row.height"
+										v-on:blur="calcVol(row)"
+										v-on:keyup.enter="calcVol(row)">
 								</div>
 								<div class="form-group">
-									<label>Volume</label> <input class="form-control" disabled="disabled" value="123">
+									<label>Volume</label> <input class="form-control" disabled="disabled" v-model="row.volume">
 								</div>
+								<button class="btn" @click="removeRow(row)">Delete</button>
 							</div><!-- .form-inline -->
 							<div class="form-group">
 							</div>
